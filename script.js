@@ -6,7 +6,7 @@ const buttons = document.querySelectorAll('button[data-choice]');
 const resultDiv = document.getElementById('round-result');
 const scoreDiv = document.getElementById('score');
 const winnerDiv = document.getElementById('winner');
-
+const playAgainButton = document.getElementById('play-again');
 
 
 function getComputerChoice(){
@@ -46,6 +46,8 @@ function checkForWinner(){
             winnerDiv.textContent = 'Sorry! The Computer has won the game!';
         }
         buttons.forEach(button => button.disabled=true);
+
+        playAgainButton.style.display = 'inline-block';
     }
 }
 
@@ -61,4 +63,14 @@ buttons.forEach(button => {
         updateScore();
         checkForWinner();
     });
+});
+
+playAgainButton.addEventListener('click', () => {
+    playerScore = 0;
+    computerScore = 0;
+    updateScore();
+    resultDiv.textContent = 'Click a button to play!';
+    winnerDiv.textContent = '';
+    buttons.forEach(button => button.disabled = false);
+    playAgainButton.style.display = 'none';
 });
