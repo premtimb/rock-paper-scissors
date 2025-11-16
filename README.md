@@ -1,7 +1,5 @@
 # Odin Project Rock-Paper-Scissors
 
-
-# Rock Paper Scissors
 A clean, interactive implementation of the classic Rock–Paper–Scissors game.  
 Built as part of **The Odin Project**, this version features a responsive UI, dynamic score tracking, real-time result messages, and simple but effective visuals.
 
